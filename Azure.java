@@ -56,33 +56,15 @@ public class Azure {
 		System.out.println(driver.findElementByXPath("(//span[@class='numeric']/span)[6]").getText());
 
 		driver.findElementByXPath("//button[text()='Export']").click();
-
-		// Get the file
-		File f = new File("C:\\Users\\NethraNandhana\\Downloads");
-
-		// Check if the specified file
-		// Exists or not
-		if (f.exists())
-			System.out.println("File Exists");
-		else
-			System.out.println("Does not Exists");
+		checkFile("ExportedEstimate.xlsx");
 		js.executeScript("window.scrollBy(0,-300)");
 		Actions build = new Actions(driver);
 		build.click(driver.findElementByXPath("//a[text()='Example Scenarios']")).perform();
-		;
+
 		driver.findElementByXPath("//button[@data-slug='cicd-for-containers']").click();
 		driver.findElementByXPath("//button[text()='Add to estimate']").click();
 		Thread.sleep(2000);
-
-		// Get the file
-		File f1 = new File("C:\\Users\\NethraNandhana\\Downloads");
-
-		// Check if the specified file
-		// Exists or not
-		if (f1.exists())
-			System.out.println("File Exists");
-		else
-			System.out.println("Does not Exists");
+		checkFile("ExportedEstimate.xlsx");
 		driver.findElementById("devtest-toggler").click();
 
 		WebElement selCurrencyDD1 = driver.findElementByXPath("//select[@aria-label='Currency']");
@@ -91,5 +73,18 @@ public class Azure {
 
 		driver.findElementByXPath("//button[text()='Export']").click();
 	}
-	
+
+	public static void checkFile(String filename) {
+		// Get the file
+		File f = new File("C:\\Users\\NethraNandhana\\Downloads\\" + filename);
+
+		// Check if the specified file
+		// Exists or not
+		if (f.exists())
+			System.out.println("File Exists");
+		else
+			System.out.println("Does not Exists");
+
+	}
+
 }
