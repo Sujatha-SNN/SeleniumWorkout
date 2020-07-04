@@ -33,6 +33,7 @@ import org.openqa.selenium.interactions.Actions;
 17) Click Proceed to Pay
 18) Capture the screenshot of the item under ORDER SUMMARY
 19) Close the browser*/
+
 public class PepperFry {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
