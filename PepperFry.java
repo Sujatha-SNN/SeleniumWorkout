@@ -55,16 +55,7 @@ public class PepperFry {
 		driver.findElement(By.id("webklipper-publisher-widget-container-notification-close-div")).click();
 		driver.switchTo().defaultContent();
 
-		/*
-		 * WebElement freedomPP = driver.findElement(By.tagName("span"));
-		 * js.executeScript("arguments[0].click();", freedomPP);
-		 *//*
-			 * WebElement freedomClose =
-			 * driver.findElementByXPath("//span[@class='wewidgeticon we_close icon-large']"
-			 * ); Thread.sleep(2000); //build.click(freedomClose).perform();
-			 * js.executeScript("arguments[0].click();", freedomClose);
-			 */
-
+		
 		// Mouseover on Furniture and click Office Chairs under Chairs
 
 		build.moveToElement(driver.findElementByXPath("//li/a[text()='Furniture']")).click().perform();
