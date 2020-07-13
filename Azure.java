@@ -59,11 +59,26 @@ public class Azure {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebElement inputSec = driver.findElementByXPath("(//input[@name='seconds'])[1]");
 
-		inputSec.sendKeys(Keys.RIGHT);
-		inputSec.sendKeys(Keys.BACK_SPACE);
+		//method1
+		js.executeScript("arguments[0].value='"+ 180000 +"';", inputSec);
+		inputSec.sendKeys(Keys.TAB);
+		
+		Thread.sleep(1000);
+		
+		//method2
+		//used this...
+		//inputSec.sendKeys(Keys.chord(Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.LEFT),"18000");
+		
+		//method3
+		/*inputSec.sendKeys(Keys.BACK_SPACE);
 		inputSec.sendKeys(Keys.BACK_SPACE);
 		inputSec.sendKeys(Keys.LEFT);
 		inputSec.sendKeys("18000");
+	        */	
+		
+		//alternative to send 180000
+		//driver.findElementByXPath("//h5[text()='Duration']/following::div[2]/input").sendKeys(Keys.chord(Keys.CONTROL,"a"),"180000");
+
 
 		WebElement selMemDD = driver.findElementByXPath("(//select[@name='memory'])[1]");
 		Select selMem = new Select(selMemDD);
