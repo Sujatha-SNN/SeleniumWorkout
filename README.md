@@ -1,5 +1,5 @@
 ### Repository contains Selenium test automation scripts for various scenarios based on various e-commerce sites and public domain sites.
-## Exhaustively covers the follwoing.
+#### Exhaustively covers the follwoing.
 	1. Handling WebElements(Textbox,  regularbuttons(radio and check box) ,dropdowns
 	2. Dynamic WebElements
 	3. Dropdown(using Select class) and bootstrap dropdown
